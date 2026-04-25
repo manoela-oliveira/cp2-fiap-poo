@@ -1,48 +1,46 @@
 package br.com.fiapdelivery.model;
 
-public class caminhao {
-    public String pl;
-    public double cap;
-    public int eixos;
-}
-
-// ARQUIVO moto.java:
-public class moto {
-    public String pl;
-    public double cap;
-    public boolean bau;
-}
-
-// ARQUIVO pacote.java:
-public class pacote {
-    public String cod;
-    public double p;
-    public String s;
-
-    public void muda(String x) {
-        s = x;
-    }
-}
-
-// ARQUIVO Rota.java:
 public class Rota {
-    public pacote p1;
-    public caminhao c1;
+    private String destino;
 
-    public void vai() {
-        System.out.println("Levando pacote " + p1.cod + " no veiculo " + c1.pl);
+    private Pacote produtoEntrega;
+    private Veiculo veiculoUtilizado;
+
+    public Rota(String destino, Pacote produtoEntrega, Veiculo veiculoUtilizado) {
+        this.setDestino(destino);
+        this.produtoEntrega = produtoEntrega;
+        this.veiculoUtilizado = veiculoUtilizado;
+    }
+
+    public String getDestino() {
+		return this.destino;
+	}
+
+    private void setDestino(String destino) {
+        if (destino != null){
+        this.destino = destino;
+        }
+        else{
+            System.out.println("Erro: O espaço 'Destino' deve conter ao menos 1 caracter válido.");
+        }
+    }
+
+    public Pacote getProdutoEntrega() {
+		return this.produtoEntrega;
+	}
+
+    public Veiculo getVeiculoUtilizado() {
+		return this.veiculoUtilizado;
+	}
+
+    public void exibirInformações() {
+        System.out.println("\n>>> INFORMAÇÕES DE ENTREGA <<<");
+        System.out.println("Destino: " + this.destino);
+        System.out.println("Produto: " + this.produtoEntrega.getCodigo());
+        System.out.println("Veículo: " + this.veiculoUtilizado.getPlaca());
+    }
+
+    public void realizarEntrega() {
+        System.out.println("Levando pacote " + this.produtoEntrega.getCodigo() + " no veiculo " + this.veiculoUtilizado.getPlaca() + " para o(a) " + this.destino);
     }
 }
-
-// ARQUIVO Principal.java:
-public class Principal {
-    public static void main(String[] args) {
-        caminhao c = new caminhao();
-        c.pl = "ABC1234";
-        // A linha 40 foi removida, pois não faz parte do código original que você forneceu, mas estava na numeração.
-        // Se precisar de c.cap = -500.0; é só adicionar de volta.
-        c.cap = -500.0; // Adicionada de volta caso fosse um erro de copia.
-
-
-        pacote pac = new pacote();
-        pac.cod =
