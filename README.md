@@ -26,6 +26,57 @@ O objetivo final da atividade proposta consiste no diagnóstico de falhas arquit
 
 ### Material recebido para ajuste (código + arquivo asta UML)
 ```
+// ARQUIVO caminhao.java:
+public class caminhao {
+public String pl;
+public double cap;
+public int eixos;
+}
+
+// ARQUIVO moto.java:
+public class moto {
+public String pl;
+public double cap;
+public boolean bau;
+}
+
+// ARQUIVO pacote.java:
+public class pacote {
+public String cod;
+public double p;
+public String s;
+
+public void muda(String x) {
+s = x;
+}
+}
+// ARQUIVO Rota.java:
+public class Rota {
+public pacote p1;
+public caminhao c1;
+
+public void vai() {
+System.out.println("Levando pacote " + p1.cod + " no veiculo " + c1.pl);
+}
+}
+// ARQUIVO Principal.java:
+public class Principal {
+public static void main(String[] args) {
+caminhao c = new caminhao();
+c.pl = "ABC1234";
+c.cap = -500.0;
+
+pacote pac = new pacote();
+pac.cod = "BR999";
+pac.p = 10.5;
+pac.s = "Pendente";
+
+Rota r = new Rota();
+r.p1 = pac;
+r.c1 = c;
+r.vai();
+}
+}
 ```
 
 ### Etapas de ajuste do código legado
@@ -45,18 +96,70 @@ O objetivo final da atividade proposta consiste no diagnóstico de falhas arquit
       └── Veiculo.java
 ```
   </li>
-  <li>Ajuste de nomeclatura de atributos e métodos --> Nomes devem ser significativos, ou seja, fornecer informações claras sobre do que se trata aquele atributo e/ou método. Dessa forma:
-  pl se torna placa
-  cap se torna capacidade
-  cod se torna codigo
-  p se torna peso
-  s se torna statusEntrega
-  eixos se torna quantidadeEixos
-  bau se torna possuiBau
-  muda se torna alterarStatus
-  vai se torna realizarEntrega
-  p1 se torna produtoEntrega
-  c1 se torna veiculoUtilizado
+  <li>Ajuste de nomeclatura de atributos e métodos --> Nomes devem ser significativos, ou seja, fornecer informações claras sobre do que se trata aquele atributo e/ou método.
+  <table>
+  <tr>
+    <th>Dessa forma:</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr>
+    <td>pl</td>
+    <td>➜</td>
+    <td>placa</td>
+  </tr>
+  <tr>
+    <td>cap</td>
+    <td>➜</td>
+    <td>capacidade</td>
+  </tr>
+    <tr>
+    <td>cod</td>
+    <td>➜</td>
+    <td>codigo</td>
+  </tr>
+    <tr>
+    <td>p</td>
+    <td>➜</td>
+    <td>peso</td>
+  </tr>
+    <tr>
+    <td>s</td>
+    <td>➜</td>
+    <td>statusEntrega</td>
+  </tr>
+    <tr>
+    <td>eixos</td>
+    <td>➜</td>
+    <td>quantidadeEixos</td>
+  </tr>
+    <tr>
+    <td>bau</td>
+    <td>➜</td>
+    <td>possuiBau</td>
+  </tr>
+    <tr>
+    <td>muda</td>
+    <td>➜</td>
+    <td>alterarStatus</td>
+  </tr>
+    <tr>
+    <td>vai</td>
+    <td>➜</td>
+    <td>realizarEntrega</td>
+  </tr>
+    <tr>
+    <td>p1</td>
+    <td>➜</td>
+    <td>produtoEntrega</td>
+  </tr>
+    <tr>
+    <td>c1</td>
+    <td>➜</td>
+    <td>veiculoUtilizado</td>
+  </tr>
+</table>
+</table>
   </li>
   <li>Definindo parâmetros --> Enquanto ainda não aprendemos a aplicar padrões de projeto como o Builder para organizar objetos com uma grande quantidade de parâmetros, o ideal é seguir o limite de 3 parâmetros (definido no livro Clean Code, escrito por Robert C. Martin). Esta prática garante a legibilidade do código.
   </li>
@@ -70,3 +173,7 @@ O objetivo final da atividade proposta consiste no diagnóstico de falhas arquit
   <li>Aplicando testes --> Com o intuito de descobrir se o código está devidamente construído, diferentes solicitações foram feitas ao sistema no arquivo SistemaPrincipal pata verificar se seus retornos seriam satisfatórios.
   </li>
 </ol>
+
+## Vivendo e aprendendo - correções do professor
+Faltam unidades de medida em variáveis numéricas: peso e capacidade não indicam a unidade.
+<br>Getter boolean fora do padrão: getPossuiBau() não segue a convenção Java.
