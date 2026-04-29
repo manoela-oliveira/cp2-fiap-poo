@@ -31,16 +31,16 @@ public class SistemaPrincipal {
         Caminhao caminhao1 = new Caminhao("GHI9012", 200.0, 3);
         Caminhao caminhao2 = new Caminhao("JKL3456", 50.0, 1);
 
-        System.out.println("Moto 1: Placa = " + moto1.getPlaca() + " | Capacidade = " + moto1.getCapacidade() + " | Possui Baú = " + moto1.getPossuiBau());
+        System.out.println("Moto 1: Placa = " + moto1.getPlaca() + " | Capacidade = " + moto1.getCapacidade() + " | Possui Baú = " + moto1.isPossuiBau());
         moto1.removerBau();
-        System.out.println("Moto 1: Possui Baú = " + moto1.getPossuiBau());
+        System.out.println("Moto 1: Possui Baú = " + moto1.isPossuiBau());
         moto1.adicionarBau();
         moto1.adicionarBau();
         System.out.println();
 
-        System.out.println("Moto 2: Placa = " + moto2.getPlaca() + " | Capacidade = " + moto2.getCapacidade() + " | Possui Baú = " + moto2.getPossuiBau());
+        System.out.println("Moto 2: Placa = " + moto2.getPlaca() + " | Capacidade = " + moto2.getCapacidade() + " | Possui Baú = " + moto2.isPossuiBau());
         moto2.adicionarBau();
-        System.out.println("Moto 2: Possui Baú = " + moto2.getPossuiBau());
+        System.out.println("Moto 2: Possui Baú = " + moto2.isPossuiBau());
         System.out.println();
 
         System.out.println("Caminhão 1: Placa = " + caminhao1.getPlaca() + " | Capacidade = " + caminhao1.getCapacidade() + " | Eixos = " + caminhao1.getQuantidadeEixos());

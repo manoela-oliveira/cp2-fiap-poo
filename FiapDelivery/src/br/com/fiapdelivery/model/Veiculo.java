@@ -2,11 +2,11 @@ package br.com.fiapdelivery.model;
 
 public class Veiculo {
     private String placa;
-    private double capacidade;
+    private double capacidadeKg; // alterado para ter sua unidade explícita
 
-    public Veiculo(String placa, double capacidade) {
+    public Veiculo(String placa, double capacidadeKg) {
         this.setPlaca(placa);
-        this.setCapacidade(capacidade);
+        this.setCapacidade(capacidadeKg);
     }
 
     public String getPlaca() {
@@ -23,12 +23,12 @@ public class Veiculo {
     }
 
     public double getCapacidade() {
-		return this.capacidade;
+		return this.capacidadeKg;
 	}
 
     private void setCapacidade(double valor) {
         if (valor >= 0){
-            this.capacidade = valor;
+            this.capacidadeKg = valor;
         }
         else {
             System.out.println("Erro: Tentativa de definir capacidade negativa bloqueada!");

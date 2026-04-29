@@ -3,8 +3,8 @@ package br.com.fiapdelivery.model;
 public class Caminhao extends Veiculo {
     private int quantidadeEixos;
 
-    public Caminhao(String placa, double capacidade, int quantidadeEixos) {
-        super(placa, capacidade);
+    public Caminhao(String placa, double capacidadeKg, int quantidadeEixos) {
+        super(placa, capacidadeKg);
         this.setQuantidadeEixos(quantidadeEixos);
     }
 

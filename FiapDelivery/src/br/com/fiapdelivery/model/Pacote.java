@@ -1,23 +1,24 @@
 package br.com.fiapdelivery.model;
 
 public class Pacote {
-    private String codigo;
-    private double peso;
+    private String codigoRastreamento; // alterado para ficar mais completo
+
+    private double pesoKg; // alterado para ter sua unidade explícita
     private String statusEntrega;
 
-    public Pacote(String codigo, double peso, String statusEntrega) {
-        this.setCodigo(codigo);
-        this.setPeso(peso);
+    public Pacote(String codigoRastreamento, double pesoKg, String statusEntrega) {
+        this.setCodigo(codigoRastreamento);
+        this.setPeso(pesoKg);
         this.setStatusEntrega(statusEntrega);
     }
 
     public String getCodigo() {
-		return this.codigo;
+		return this.codigoRastreamento;
 	}
 
-    private void setCodigo(String codigo) {
-        if (codigo != null){
-        this.codigo = codigo;
+    private void setCodigo(String codigoRastreamento) {
+        if (codigoRastreamento != null){
+        this.codigoRastreamento = codigoRastreamento;
         }
         else{
             System.out.println("Erro: O espaço 'Código' deve conter ao menos 1 caracter válido.");
@@ -25,12 +26,12 @@ public class Pacote {
     }
 
     public double getPeso() {
-		return this.peso;
+		return this.pesoKg;
 	}
 
-    private void setPeso(double peso) {
-        if (peso >= 0){
-            this.peso = peso;
+    private void setPeso(double pesoKg) {
+        if (pesoKg >= 0){
+            this.pesoKg = pesoKg;
         }
         else {
             System.out.println("Erro: Tentativa de definir 'Peso' negativo bloqueada!");

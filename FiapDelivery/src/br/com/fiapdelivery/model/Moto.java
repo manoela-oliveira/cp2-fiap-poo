@@ -3,12 +3,12 @@ package br.com.fiapdelivery.model;
 public class Moto extends Veiculo {
     private boolean possuiBau;
 
-    public Moto(String placa, double capacidade, boolean possuiBau) {
-        super(placa, capacidade);
+    public Moto(String placa, double capacidadeKg, boolean possuiBau) {
+        super(placa, capacidadeKg);
         this.setPossuiBau(possuiBau);
     }
 
-    public boolean getPossuiBau() {
+    public boolean isPossuiBau() { // get alterado para is por convenção em Java (boolean)
 		return this.possuiBau;
 	}
 
